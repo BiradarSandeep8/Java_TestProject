@@ -1,16 +1,17 @@
 trigger:
-- master
+- main  # Adjust to match your main branch name
 
-pool: WindowVm
+pool:
+  name: WindowVm
 
 steps:
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'  # Adjust memory settings based on project requirements
+    mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.8'  # Ensure this is the correct Java version for your project
+    jdkVersionOption: '11'  # Adjust to the required Java version
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'  # Adjust if your project uses a different location for test results
-    goals: 'package'  # Adjust build goals based on your project requirements
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'  # Adjust if needed
+    goals: 'package'
