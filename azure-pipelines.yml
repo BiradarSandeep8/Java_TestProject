@@ -6,7 +6,7 @@
 trigger:
 - master
 
-pool: mypool
+pool: WindowVm
 
 steps:
 - task: Maven@3
