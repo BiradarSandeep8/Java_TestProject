@@ -2,7 +2,7 @@ trigger:
 - main  # Adjust to match your main branch name
 
 pool:
-  name: WindowVm
+  name: demo
 
 steps:
 - task: Maven@3
